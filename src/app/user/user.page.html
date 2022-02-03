@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-fab color="secondary" class="fab-icon"vertical="end" horizontal="end">
+        <ion-fab-button fabSize="normal" color="secondary" type="md" (click)="getHome()">
+          <ion-icon name="arrow-back"></ion-icon>
+        </ion-fab-button>
+
+    </ion-fab>
+    <ion-title vertical="center" class="title" color="primary">Usuario</ion-title>
+    <ion-fab class="fab-icon"vertical="center" horizontal="start">
+      <ion-icon name="person"></ion-icon>
+    </ion-fab>
+
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="list-ajust">
+  <ion-list >
+    <ion-item>
+      <ion-avatar slot="start">
+        <img [src]= "path" />
+      </ion-avatar>
+      <ion-label>
+        <h2>{{user["first_name"] + ' ' + user["last_name"]}}</h2>
+        <h3 class="bold">{{user["email"]}}</h3>
+        <p> _____________________ </p>
+        <ion-fab class="fab-button" vertical="top" horizontal="end" slot="block">
+          <ion-fab-button>
+            <ion-icon name="logo-facebook"></ion-icon>
+          </ion-fab-button>
+        </ion-fab>
+        <ion-fab class="fab-button" vertical="top" horizontal="center" slot="fixed">
+          <ion-fab-button fabSize="normal" color="success" type="md" (click)="getHome()">
+            <ion-icon name="chatbubbles"></ion-icon>
+          </ion-fab-button>
+        </ion-fab>
+      </ion-label>
+
+    </ion-item>
+  </ion-list>
+</ion-content>

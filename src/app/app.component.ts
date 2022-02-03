@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FeedbackService } from './services/feedback.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor() {}
+  loading = false;
+  constructor(private feedbackSvc: FeedbackService) {
+    this.feedbackSvc.loading.subscribe((isLoading) =>{
+      this.loading = isLoading;
+    });
+  }
 }
